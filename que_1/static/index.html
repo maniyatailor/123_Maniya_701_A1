@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Node Js Question-1</h1>
+    <button onclick="getHello()">Click me</button>
+
+    <p id="output"></p>
+   
+    <script>
+        function getHello()
+        {
+            fetch('/gethello').then(response=>response.text())
+            .then(data=>{
+                document.getElementById('output').innerText=data;
+            })
+            .catch(error=>{
+                console.error("Error Fetching hello",error);
+            });
+        }
+    </script>
+</body>
+</html>
